@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 5941394368982769571}
   - component: {fileID: 2395562120029711758}
   - component: {fileID: 5988256229128216027}
+  - component: {fileID: 4303044097593573163}
   m_Layer: 10
   m_Name: ForestFireCell
   m_TagString: Untagged
@@ -146,6 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34994f707da561147bd285259b8c71c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isWaterCell: 0
   numberOfAliveNeighbours: 0
   cellState: 0
   cellFuel: 0
@@ -153,6 +155,7 @@ MonoBehaviour:
   groundMaterialGrass: {fileID: 2100000, guid: 9dccf2dcc78efe741b7931e3bb85beaf, type: 2}
   groundMaterialRock: {fileID: 2100000, guid: e7268e596932cb541834f57d320a4677, type: 2}
   groundMaterialTree: {fileID: 2100000, guid: 5558b5711d37782468eeee5c2880e7d8, type: 2}
+  groundMaterialWater: {fileID: 2100000, guid: db96e04f47f6c2a44bc6bb90f93602ec, type: 2}
   treeObject: {fileID: 4045407423716281207}
   leaves: {fileID: 4045407423716281205}
   rockObject: {fileID: 8846265225297738733}
@@ -182,6 +185,7 @@ MonoBehaviour:
     m_Bits: 4294967295
   m_InteractionLayers:
     m_Bits: 4294967295
+  m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
   m_FirstHoverEntered:
@@ -214,6 +218,8 @@ MonoBehaviour:
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
   m_OnFirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -243,7 +249,10 @@ MonoBehaviour:
       m_Calls: []
   m_TeleportationProvider: {fileID: 0}
   m_MatchOrientation: 0
+  m_MatchDirectionalInput: 0
   m_TeleportTrigger: 0
+  m_FilterSelectionByHitNormal: 0
+  m_UpNormalToleranceDegrees: 30
   m_Teleporting:
     m_PersistentCalls:
       m_Calls: []
@@ -343,6 +352,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4303044097593573163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8517016399536926406}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5093613b72e0dec43b32c485ab7ad5b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBarScript: {fileID: 0}
+  cellGenerationScript: {fileID: 0}
+  healingValue: 1
+  inTheWater: 0
 --- !u!1001 &1289785187829813023
 PrefabInstance:
   m_ObjectHideFlags: 0

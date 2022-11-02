@@ -7,6 +7,7 @@ using UnityEngine.VFX;
 // contains data about the cell and methods to change its visual appearance
 public class ForestFireCell : MonoBehaviour
 {
+    public bool isWaterCell;
     public int numberOfAliveNeighbours; // integer to store the number of alive neighbour cells
     public State cellState; // this variable stores the state of the cell as an enum defined below 
     public enum State
@@ -17,6 +18,7 @@ public class ForestFireCell : MonoBehaviour
         Alight,
         Rock,
         Burnt,
+        Water,
     }
 
     public int cellFuel; // integer to store the amount of fuel in the cell
@@ -26,6 +28,7 @@ public class ForestFireCell : MonoBehaviour
     public Material groundMaterialGrass;
     public Material groundMaterialRock;
     public Material groundMaterialTree;
+    public Material groundMaterialWater;
     private MeshRenderer groundMeshRenderer; // reference to this cell's mesh renderer, used when changing material
 
     public GameObject treeObject; // reference to tree visual object
@@ -125,9 +128,31 @@ public class ForestFireCell : MonoBehaviour
         cellState = State.Rock;
         cellFuel = 0;
         groundMeshRenderer.material = groundMaterialRock; // sets the cell material to rock
-        rockObject.SetActive(true); 
+        rockObject.SetActive(true);
     }
 
+    public void SetWater()
+    {
+        isWaterCell = true;
+        if (groundMeshRenderer.sharedMaterial == groundMaterialWater)
+            return;
+        // this code below wont run once the water material has been set
+        ResetCell();
+        cellState = State.Water;
+        HealingPool pool = GetComponent<HealingPool>();
+
+        // if cell is water materical enable HealingPool script
+
+        pool.enabled = true;
+
+
+        cellFuel = 0;
+        groundMeshRenderer.material = groundMaterialWater;
+        // sets the cell material to water
+        // change cell state to grass    
+        // a grass cell will never go back to grass from another state 
+        // so we can check to see if the grass has material has been set aleady and skip changing it again to save on performance
+    }
     // set cell alight
     public void SetAlight()
     {
@@ -157,17 +182,22 @@ public class ForestFireCell : MonoBehaviour
     // set cell burnt
     public void SetBurnt()
     {
-        // if the cell has a fire, destroy it
-        if (currentFire != null)
+
+        if (!isWaterCell)
         {
-            Destroy(currentFire);
+
+            // if the cell has a fire, destroy it
+            if (currentFire != null)
+            {
+                Destroy(currentFire);
+            }
+
+            // if there are leaves active in the hierarchy of this cell, disable them as if they have been burnt 
+            if (treeObject.activeInHierarchy)
+                leaves.SetActive(false);
+
+            cellState = State.Burnt;
+            groundMeshRenderer.material = groundMaterialBurnt;
         }
-
-        // if there are leaves active in the hierarchy of this cell, disable them as if they have been burnt 
-        if (treeObject.activeInHierarchy)
-            leaves.SetActive(false);
-
-        cellState = State.Burnt;
-        groundMeshRenderer.material = groundMaterialBurnt;
     }
 }
