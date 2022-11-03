@@ -276,8 +276,10 @@ MonoBehaviour:
   nlight: 5
   xC: 0
   yC: 0
+  switchValue: 0
   rockChance: 10
   grassChance: 40
+  waterChance: 50
   cellPrefab: {fileID: 8517016399536926406, guid: bd5b6afb2ea580946a81c949556e036e,
     type: 3}
   gameRunning: 0
@@ -2269,7 +2271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMaxHealth: 10
   playerCurrentHealth: 0
-  gameOverText: {fileID: 735976806}
+  gameOverText: {fileID: 596378990}
 --- !u!54 &1844995192
 Rigidbody:
   m_ObjectHideFlags: 0
