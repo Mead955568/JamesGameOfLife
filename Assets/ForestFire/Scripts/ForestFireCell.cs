@@ -51,7 +51,7 @@ public class ForestFireCell : MonoBehaviour
     }
 
     // reset anything that was turned on by a different cell 
-    private void ResetCell()
+    public void ResetCell()
     {
         // turn off the tree and rock objects
         treeObject.SetActive(false);
