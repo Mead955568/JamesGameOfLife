@@ -26,6 +26,7 @@ public class Extinguish : MonoBehaviour
             isInFire = true; // This sets the bool as true
             
             cellGeneration.SetBurnt();
+            Debug.Log("The Bullet Has Hit");
         }
         else
         {
