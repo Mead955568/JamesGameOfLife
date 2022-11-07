@@ -11,8 +11,8 @@ public class Extinguish : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (cellGeneration = GameObject.Find("ForestFireCell").GetComponent<ForestFireCell>()) ; // This is a command for the "Bullet" to find the script for the Forest Fire Cell
-        if (cell3D = GameObject.Find("ForestFire3D").GetComponent<ForestFire3D>()) ; // This is a command for the "Bullet" to find the script for the Forest Fire 3D
+        cellGeneration = GameObject.Find("ForestFireCell").GetComponent<ForestFireCell>() ; // This is a command for the "Bullet" to find the script for the Forest Fire Cell
+        cell3D = GameObject.Find("ForestFire3D").GetComponent<ForestFire3D>() ; // This is a command for the "Bullet" to find the script for the Forest Fire 3D
     }
 
     // Update is called once per frame

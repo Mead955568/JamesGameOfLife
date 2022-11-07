@@ -128,4 +128,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellGeneration: {fileID: 0}
+  cell3D: {fileID: 0}
   isInFire: 0
