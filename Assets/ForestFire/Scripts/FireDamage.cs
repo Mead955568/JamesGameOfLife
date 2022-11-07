@@ -46,6 +46,7 @@ public class FireDamage : MonoBehaviour
             {
                 healthBarScript.playerCurrentHealth = healthBarScript.playerCurrentHealth - damageValue; // This command removes the float value from the Player Current Health value
                 yield return new WaitForSeconds(1f); // This command makes the script wait for 1 second before continuing
+                Debug.Log("Health = " + healthBarScript.playerCurrentHealth); // This is a Debug to check how much health the "PC" has left
 
                 StartCoroutine(Burn()); // This command start the coroutine "Burn()"
             }

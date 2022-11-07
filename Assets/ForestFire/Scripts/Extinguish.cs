@@ -5,12 +5,14 @@ using UnityEngine;
 public class Extinguish : MonoBehaviour
 {
     public ForestFireCell cellGeneration;
+    public ForestFire3D cell3D;
 
     public bool isInFire;
     // Start is called before the first frame update
     void Start()
     {
-        if (cellGeneration = GameObject.Find("ForestFireCell").GetComponent<ForestFireCell>()) ;
+        if (cellGeneration = GameObject.Find("ForestFireCell").GetComponent<ForestFireCell>()) ; // This is a command for the "Bullet" to find the script for the Forest Fire Cell
+        if (cell3D = GameObject.Find("ForestFire3D").GetComponent<ForestFire3D>()) ; // This is a command for the "Bullet" to find the script for the Forest Fire 3D
     }
 
     // Update is called once per frame
@@ -25,9 +27,9 @@ public class Extinguish : MonoBehaviour
             isInFire = true; // This sets the bool as true
             Debug.Log("The Bullet Has Hit");
         } 
-        if (other.tag == "OnFire")
+        if (other.tag == "OnFire") // THis is a check to only activate the cells that are "OnFire"
         {
-            cellGeneration.SetBurnt();
+            cellGeneration.SetBurnt(); // This sets the Cell as "Burnt"
         }
     }
 }

@@ -43,7 +43,7 @@ public class HealingPool : MonoBehaviour
             {
                 healthBarScript.playerCurrentHealth = healthBarScript.playerCurrentHealth + healingValue; // This command adds the float value from the Player Current Health value
                 yield return new WaitForSeconds(1f); // This command makes the script wait for 1 second before continuing
-
+                Debug.Log("Health = " + healthBarScript.playerCurrentHealth); // This is a Debug to check how much health the "PC" has left
                 StartCoroutine(Heal()); // This coroutine starts the coroutine "Heal()"
             }
             else // This command makes the script do nothing if the "PC" Current Health Value is equal to the "PC" Max Health Value
