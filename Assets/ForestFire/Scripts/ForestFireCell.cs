@@ -174,6 +174,7 @@ public class ForestFireCell : MonoBehaviour
                 currentFire.transform.SetParent(gameObject.transform, true);
                 currentFire.transform.localPosition = Vector3.zero;
             }
+            gameObject.tag = "OnFire";
             // get a reference to the vfx component on the current fire object
             _fireVisualEffect = currentFire.GetComponent<VisualEffect>();
         }
@@ -198,6 +199,7 @@ public class ForestFireCell : MonoBehaviour
 
             cellState = State.Burnt;
             groundMeshRenderer.material = groundMaterialBurnt;
+            gameObject.tag = "Burnt";
         }
     }
 }

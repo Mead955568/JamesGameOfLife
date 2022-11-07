@@ -8,6 +8,8 @@ TagManager:
   - PC
   - Extinguish
   - Fire
+  - OnFire
+  - Burnt
   layers:
   - Default
   - TransparentFX
