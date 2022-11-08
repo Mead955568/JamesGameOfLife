@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthBar : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class HealthBar : MonoBehaviour
     public float playerCurrentHealth; // This is a float for the value of the "PC" Current Health
 
     public GameObject gameOverText; // This is a Text screen displaying "Game Over" text
+    public Slider healthSlider;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,7 @@ public class HealthBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healthSlider.value = playerCurrentHealth;
         if (playerCurrentHealth <= 0) // This command checks to see if the "PC" Current Health is equal or lower then zero, if so runs the lines below
         {
             gameOverText.SetActive(true); // This sets the text to be visible

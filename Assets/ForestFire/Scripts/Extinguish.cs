@@ -29,6 +29,8 @@ public class Extinguish : MonoBehaviour
         } 
         if (other.tag == "OnFire") // THis is a check to only activate the cells that are "OnFire"
         {
+            Debug.Log("The Bullet Has Hit The Floor");
+            cellGeneration.ResetCell();
             cellGeneration.SetBurnt(); // This sets the Cell as "Burnt"
         }
     }
