@@ -6,9 +6,10 @@ public class Extinguish : MonoBehaviour
 {
     public ForestFireCell cellGeneration;
     public ForestFire3D cell3D;
+    public HealthBar playerScoreScript;
 
     public bool isInFire;
-
+    public float fireScore;
 // Start is called before the first frame update
 //void Awake()
 //    {
@@ -41,8 +42,12 @@ public class Extinguish : MonoBehaviour
         {
             Debug.Log("The Bullet Has Hit The Floor");
             cellGeneration = other.GetComponent<ForestFireCell>();
-            cellGeneration.ResetCell();
+            cellGeneration.ResetCell(); // This Resets the Cell
             cellGeneration.SetBurnt(); // This sets the Cell as "Burnt"
+
+            playerScoreScript = GameObject.Find("PlayerModel").GetComponent<HealthBar>();
+            playerScoreScript.playerScore = playerScoreScript.playerScore + fireScore;
+            Debug.Log(playerScoreScript.playerScore);
         }
     }
 }

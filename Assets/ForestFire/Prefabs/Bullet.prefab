@@ -129,4 +129,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellGeneration: {fileID: 0}
   cell3D: {fileID: 0}
+  playerScoreScript: {fileID: 0}
   isInFire: 0
+  fireScore: 1

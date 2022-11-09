@@ -2130,7 +2130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 4590688289033218756, guid: d5f1a079b5e28c24b9eaac590d8f2d7b, type: 3}
   spawnPoint: {fileID: 761742374}
-  fireSpeed: 5
+  fireSpeed: 8
 --- !u!114 &1633593668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3221,6 +3221,7 @@ MonoBehaviour:
   playerCurrentHealth: 0
   gameOverText: {fileID: 735976806}
   healthSlider: {fileID: 821407663}
+  playerScore: 0
 --- !u!54 &1844995192
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -10,12 +10,14 @@ public class HealthBar : MonoBehaviour
 
     public GameObject gameOverText; // This is a Text screen displaying "Game Over" text
     public Slider healthSlider;
+    public float playerScore;
 
     // Start is called before the first frame update
     void Start()
     {
         playerCurrentHealth = playerMaxHealth; // This command makes the "PC" Max Health equal the Current Health equal the same from the application has started
         gameOverText.SetActive(false); // This sets the text to be invisible
+        playerScore = 0;
     }
 
     // Update is called once per frame
