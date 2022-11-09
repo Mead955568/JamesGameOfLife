@@ -8,17 +8,27 @@ public class Extinguish : MonoBehaviour
     public ForestFire3D cell3D;
 
     public bool isInFire;
-    // Start is called before the first frame update
-    void Start()
-    {
-        cellGeneration = GameObject.Find("ForestFireCell").GetComponent<ForestFireCell>() ; // This is a command for the "Bullet" to find the script for the Forest Fire Cell
-        cell3D = GameObject.Find("ForestFire3D").GetComponent<ForestFire3D>() ; // This is a command for the "Bullet" to find the script for the Forest Fire 3D
-    }
+
+// Start is called before the first frame update
+//void Awake()
+//    {
+//        cellGeneration = GameObject.Find("ForestFireCell").GetComponent<ForestFireCell>(); // This is a command for the "Bullet" to find the script for the Forest Fire Cell
+//        cell3D = GameObject.Find("ForestFire3D").GetComponent<ForestFire3D>() ; // This  is a command for the "Bullet" to find the script for the Forest Fire 3D
+//    }
 
     // Update is called once per frame
     void Update()
     {
+        //if(cellGeneration == null)
+        //{
+        //    cellGeneration = GameObject.Find("ForestFireCell").GetComponent<ForestFireCell>(); // This is a command for the "Bullet" to find the script for the Forest Fire Cell
 
+        //}
+        //if (cell3D == null)
+        //{
+        //    cell3D = GameObject.Find("ForestFire3D").GetComponent<ForestFire3D>(); // This  is a command for the "Bullet" to find the script for the Forest Fire 3D
+
+        //}
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -30,6 +40,7 @@ public class Extinguish : MonoBehaviour
         if (other.tag == "OnFire") // THis is a check to only activate the cells that are "OnFire"
         {
             Debug.Log("The Bullet Has Hit The Floor");
+            cellGeneration = other.GetComponent<ForestFireCell>();
             cellGeneration.ResetCell();
             cellGeneration.SetBurnt(); // This sets the Cell as "Burnt"
         }

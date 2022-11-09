@@ -10,13 +10,13 @@ public class HealingPool : MonoBehaviour
     public float healingValue; // float of how much Healing the Water Cell will do
 
     public bool inTheWater; // bool controlling wheather the "PC" is on a Water Cell
-    public void HealingWater()
-    {
-        if (cellGenerationScript = GameObject.Find("ForestFireCell").GetComponent<ForestFireCell>()); // This command finds the Forest Fire Cell to apply the script on water tiles
-    }
+    //public void HealingWater()
+    //{
+    //    if (cellGenerationScript = GameObject.Find("ForestFireCell").GetComponent<ForestFireCell>()); // This command finds the Forest Fire Cell to apply the script on water tiles
+    //}
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         healthBarScript = GameObject.Find("PlayerModel").GetComponent<HealthBar>(); // This is a command for the fire to find the script for the Health Bar
     }

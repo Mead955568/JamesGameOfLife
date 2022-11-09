@@ -7,7 +7,7 @@ public class FireWaterPistol : MonoBehaviour
 {
     public GameObject bullet; // The Bullet Prefab
     public Transform spawnPoint;
-    public float fireSpeed = 10;
+    public float fireSpeed;
 
     // Start is called before the first frame update
     void Start()
