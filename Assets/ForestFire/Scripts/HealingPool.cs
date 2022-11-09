@@ -16,7 +16,7 @@ public class HealingPool : MonoBehaviour
     //}
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         healthBarScript = GameObject.Find("PlayerModel").GetComponent<HealthBar>(); // This is a command for the fire to find the script for the Health Bar
     }
